@@ -7,6 +7,8 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import PostDetails from "./components/PostDetails/PostDetails";
 
 function App() {
   return (
@@ -30,12 +32,17 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/">
+        <Route exact path="/">
             <Home />
           </Route>
-          
+          <Route path ="/about">
+            <About></About>
+          </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path = "/Post/:id">
+            <PostDetails></PostDetails>
           </Route>
         </Switch>
       </div>

@@ -4,8 +4,8 @@ import { useHistory } from 'react-router';
 const Post = (props) => {
     const {id, title, body} = props.post;
     const history = useHistory();
-    const showComments = id =>{
-        const url = `/post/${id}`
+    const showComments = userId =>{
+        const url = `post/${userId}`;
         history.push(url);
     }
     
