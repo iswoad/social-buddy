@@ -5,7 +5,7 @@ import Comment from '../../Comment/Comment';
 const PostDetails = () => {
     const { id } =useParams();
     const [post, setPost] = useState({});
-    const [ comments, setComments ] = useState({});
+    const [ comments, setComments ] = useState([]);
     useEffect( ()=> {
         const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
         fetch(url)
@@ -19,6 +19,7 @@ const PostDetails = () => {
         .then(res => res.json())
         .then(data => setComments(data))
     }, [])
+    
     return (
         <div>
             <h1>This is post details</h1>
